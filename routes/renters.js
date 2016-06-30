@@ -10,7 +10,7 @@ let router = express.Router();
 
 router.route('/')
   .get((req, res)=>{
-    Renter.find({}, (err, renters)=>{
+    Renter.find({},(err, renters)=>{
       res.status(err ? 400 : 200).send(err || renters);
     });
   })

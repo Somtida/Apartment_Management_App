@@ -11,7 +11,7 @@ let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 /////////// MONGOOSE ////////////
 let mongoose = require('mongoose');
-let mongoUrl = process.env.MONGODB_URI || 'mongodb://localhost/cardsdb';
+let mongoUrl = process.env.MONGODB_URI || 'mongodb://localhost/apartmentdb';
 mongoose.connect(mongoUrl, err => {
   console.log(err || `MongoDB connected to ${mongoUrl}`);
 });
@@ -32,7 +32,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use((req, res, next)=>{
+  res.handler = (err, dbData) => {
+    res.status(err ? 400:200).send(err || dbData);
+  }
+  next();
+})
 ///// ROUTERS /////
 
 app.use('/api', require('./routes/api'));
