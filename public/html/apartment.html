@@ -1,0 +1,54 @@
+
+<div class="container my">
+
+    <div class="createBox" >
+    <div class="alert alert-info">
+      <div class="row">
+        <div class="col-xs-10 text-left">
+          <span class="fa fa-question-circle"></span>  Room Detail
+        </div>
+        <div class="col-xs-2 text-right">
+          <button ng-click="closeCreateCardArea()" class="btn btn-danger btn-sm text-right"><span class="fa fa-times-circle"></span></button>
+        </div>
+      </div>
+    </div>
+    <div>
+    <form class="form-horizontal" ng-submit="createNewCard()" ng-show="createCardArea">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Room </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" ng-model="newCard.category" required>
+        </div>
+        <label class="col-sm-2 control-label">Question</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" ng-model="newCard.question" required>
+        </div>
+        <label class="col-sm-2 control-label">Answer</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" ng-model="newCard.answer" required>
+        </div>
+        <label class="col-sm-2 control-label">hint</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" ng-model="newCard.hint" required>
+        </div>
+        <label class="col-sm-2 control-label">Choice 1: </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" ng-model="newCard.choice1">
+        </div>
+        <label class="col-sm-2 control-label">Choice 2: </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" ng-model="newCard.choice2">
+        </div>
+        <label class="col-sm-2 control-label">Choice 3: </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" ng-model="newCard.choice3">
+        </div>
+
+      <button class="btn btn-success createButt"><span class="fa fa-send"></span> Create</button>
+    </div>
+    </form>
+
+  </div>
+</div>
+
+</div>

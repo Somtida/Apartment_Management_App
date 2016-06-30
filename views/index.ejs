@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="/js/module.js"></script>
+  <script src="/js/controllers.js"></script>
+  <script src="/js/services.js"></script>
+
+</head>
+<body ng-app='myApp' ng-controller='mainCtrl' class="text-center">
+  <div class="top">
+
+      <div class="text-center">
+          <a class="fa fa-github social-icon" href="#" target="_blank"></a>
+          <a class="fa fa-twitter social-icon" href="#" target="_blank"></a>
+          <a class="fa fa-linkedin social-icon" href="#" target="_blank"></a>
+          <a class="fa fa-google-plus social-icon" href="#" target="_blank"></a>
+      </div>
+
+  </div>
+  <div class="container">
+    <h1 text-center><%= title %></h1>
+
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-info btn-lg" ui-sref='showall'>Show All List</button>
+      <button type="button" class="btn btn-success btn-lg" ui-sref='apartment'>Apartment</button>
+      <button type="button" class="btn btn-primary btn-lg" ui-sref='renter'>Renter</button>
+    </div>
+
+    <ui-view></ui-view>
+
+
+
+  </div>
+</body>
+</html>
