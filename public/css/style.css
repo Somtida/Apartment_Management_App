@@ -22,6 +22,13 @@
   margin-top: 10px;
   width: 100%;
 }
+.myShowAll{
+  margin: 0 auto;
+  width: 80%;
+}
+.renterList{
+  border: 1px solid #000;
+}
 /*follow me*/
 .social-icon{
     padding-top: 6px;

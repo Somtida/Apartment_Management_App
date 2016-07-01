@@ -20,15 +20,15 @@
       </div>
       <label class="col-sm-2 control-label">email</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" ng-model="newRenter.question" required>
+        <input type="email" class="form-control" ng-model="newRenter.email" required>
       </div>
       <label class="col-sm-2 control-label">Phone Number</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" ng-model="newRenter.answer" required>
+        <input type="tel" class="form-control" ng-model="newRenter.phone" max.length=11 required>
       </div>
-      <label class="col-sm-2 control-label">Desired Contract Length</label>
+      <label class="col-sm-2 control-label">Desired Contract Length (days)</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" ng-model="newRenter.answer" required>
+        <input type="number" class="form-control" ng-model="newRenter.tenancy" min=0 required>
       </div>
 
     <button class="btn btn-success createButt"><span class="fa fa-floppy-o"></span> Create</button>

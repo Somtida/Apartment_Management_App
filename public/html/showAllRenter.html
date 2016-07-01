@@ -1,14 +1,14 @@
 <div class="container myShowRenter">
   <br>
   <div></div>
-  <div class="renterBox">
+  <div class="renterBox" ng-show="showRenterBox">
     <table class="table">
       <thead>
         <tr>
           <th class="col-xs-3 text-center">Full Name</th>
           <th class="col-xs-3 text-center">Email</th>
           <th class="col-xs-2 text-center">Phone Number</th>
-          <th class="col-xs-2 text-center">Desired Contract Length</th>
+          <th class="col-xs-2 text-center">Desired Contract Length (days)</th>
           <th class="col-xs-2 text-center">Option</th>
         </tr>
       </thead>
@@ -17,15 +17,11 @@
           <td>{{renter.name}}</td>
           <td>{{renter.email}}</td>
           <td>{{renter.phone | phonenumber}}</td>
-          <td>
-            <div ng-repeat="renter in renter.renters">
-              {{renter.tenancy}}
-            </div>
-          </td>
+          <td>{{renter.tenancy}}</td>
 
           <td>
-            <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-            <button ng-click="deleteRoom($index)" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+            <button ng-click="editRenter($index)" class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+            <button ng-click="deleteRenter($index)" class="btn btn-danger"><i class="fa fa-trash"></i></button>
           </td>
         </tr>
       </tbody>
@@ -34,5 +30,43 @@
 
 
   </div>
+
+  <div class="createBox" ng-show="showRenterEdit">
+  <div class="alert alert-info">
+    <div class="row">
+      <div class="col-xs-10 text-left">
+        <span class="fa fa-info-circle"></span>  Renter Information
+      </div>
+      <div class="col-xs-2 text-right">
+        <button ng-click="cancelEditRenter()" class="btn btn-danger btn-sm text-right"><span class="fa fa-times-circle"></span></button>
+      </div>
+    </div>
+  </div>
+  <div>
+  <form class="form-horizontal" ng-submit="saveEditRenter()">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Full Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="editRenterObj.name" required>
+      </div>
+      <label class="col-sm-2 control-label">email</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" ng-model="editRenterObj.email" required>
+      </div>
+      <label class="col-sm-2 control-label">Phone Number</label>
+      <div class="col-sm-10">
+        <input type="tel" class="form-control" ng-model="editRenterObj.phone" required>
+      </div>
+      <label class="col-sm-2 control-label">Desired Contract Length (days)</label>
+      <div class="col-sm-10">
+        <input type="number" min=0 class="form-control" ng-model="editRenterObj.tenancy" required>
+      </div>
+
+    <button class="btn btn-success createButt"><span class="fa fa-floppy-o"></span> SAVE</button>
+  </div>
+  </form>
+
+</div>
+</div>
 
 </div>

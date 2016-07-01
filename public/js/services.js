@@ -13,12 +13,13 @@ app.service('Apartment', function($http, $q){
   this.delete = id => {
     return $http.delete(`/api/apartments/${id}`);
   }
-  this.put = (id, newRoom) => {
-    return $http.put(`/api/apartments/${id}/`, newRoom);
-  }
-  this.put = (id, renterId) => {
+  this.putRenter = (id, renterId) => {
     return $http.put(`/api/apartments/${id}/addRenter/${renterId}`);
   }
+  this.put = (id, newRoom) => {
+    return $http.put(`/api/apartments/${id}`, newRoom);
+  }
+
 })
 
 app.service('Renter', function($http){

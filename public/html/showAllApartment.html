@@ -1,7 +1,8 @@
 <div class="container myShowRenter">
   <br>
+
   <div></div>
-  <div class="apartmentBox">
+  <div class="apartmentBox" ng-show="showApartmentBox">
     <table class="table">
       <thead>
         <tr>
@@ -20,7 +21,7 @@
           <td>{{apartmentRoom.createdAt | date}}</td>
 
           <td>
-            <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+            <button ng-click="editRoom($index)" class="btn btn-warning"><i class="fa fa-pencil"></i></button>
             <button ng-click="deleteRoom($index)" class="btn btn-danger"><i class="fa fa-trash"></i></button>
           </td>
         </tr>
@@ -30,5 +31,47 @@
 
 
   </div>
+
+
+  <div class="container myShowApartment" ng-show="editArea">
+      <br>
+
+      <div class="createBox">
+      <div class="alert alert-warning">
+        <div class="row">
+          <div class="col-xs-10 text-left">
+            <span class="fa fa-question-circle"></span>  Edit Apartment Detail
+          </div>
+          <div class="col-xs-2 text-right">
+            <button ng-click="cancelEdit()" class="btn btn-danger btn-sm text-right"><span class="fa fa-times-circle"> CANCEL</span></button>
+          </div>
+        </div>
+      </div>
+      <div>
+      <form class="form-horizontal" ng-submit="saveEditRoom()">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Room Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" ng-model="editRoomObj.name" required>
+          </div>
+          <label class="col-sm-2 control-label">Capacity</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" ng-model="editRoomObj.capacity" required>
+          </div>
+          <label class="col-sm-2 control-label">Room Info.</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="editRoomObj.roomInfo"></textarea>
+          </div>
+
+        <button class="btn btn-success createButt"><span class="fa fa-send"></span> SAVE</button>
+
+      </div>
+      </form>
+
+    </div>
+  </div>
+
+  </div>
+
 
 </div>

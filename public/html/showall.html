@@ -1,7 +1,7 @@
-<div class="container my">
+<div class="container">
   <br>
   <div></div>
-  <div class="roomBox">
+  <div class="roomBox" ng-show="showAllArea">
     <table class="table">
       <thead>
         <tr>
@@ -28,15 +28,78 @@
           </td>
 
           <td>
-            <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-            <button ng-click="deleteRoom($index)" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+            <button ng-click="moveIn($index)" class="btn btn-warning"><i class="fa fa-user-plus"></i></button>
+            <button ng-click="moveOut($index)" class="btn btn-danger"><i class="fa fa-user-times"></i></button>
           </td>
         </tr>
       </tbody>
     </table>
-
-
-
   </div>
+
+  <div class="row">
+    <div class="col-xs-8">
+      <div class="moveInBox myShowAll" ng-show="showMoveInBox">
+      <div class="alert alert-success">
+        <div class="row">
+          <div class="col-xs-10 text-left">
+            <span class="fa fa-question-circle"></span>  Apartment Detail
+          </div>
+          <div class="col-xs-2 text-right">
+            <!-- <button ng-click="resetCreateApaArea()" class="btn btn-danger btn-sm text-right"><span class="fa fa-times-circle"></span></button> -->
+          </div>
+        </div>
+      </div>
+      <div>
+      <form class="form-horizontal" ng-submit="addRenterToRoom()">
+        <div class="row">
+          <label class="col-sm-4 control-label">Room Name: </label>
+          <div class="col-sm-8 text-left">
+            {{apartmentDetail.name}}
+          </div>
+        </div>
+        <div class="row">
+          <label class="col-sm-4 control-label">Capacity: </label>
+          <div class="col-sm-8 text-left">
+            {{apartmentDetail.capacity}}
+          </div>
+        </div>
+        <div class="row">
+          <label class="col-sm-4 control-label">Room Info.: </label>
+          <div class="col-sm-8 text-left">
+            {{apartmentDetail.roomInfo}}
+          </div>
+        </div>
+
+        <div class="row">
+          <label class="col-sm-4 control-label">Renter: </label>
+          <div class="col-sm-8 text-left">
+            <select ng-options="renter.name for renter in renters" ng-value="'renter.id'" ng-model="selectedRenter"></select>
+          </div>
+        </div>
+        <button class="btn btn-success createButt"><span class="fa fa-send"></span> MOVE IN</button>
+      </div>
+      </form>
+
+      </div>
+      </div>
+
+      <div class="col-xs-4 renterList">
+        <!-- <div class="">
+          <span>
+            <button><i class="fa fa-user-plus"></i></button>
+          </span>
+          <span>
+            {{renter.name}}
+          </span>
+
+        </div>
+      </div> -->
+    </div>
+
+
+
+
+
+
 
 </div>

@@ -30,6 +30,11 @@ app.config(function($stateProvider, $urlRouterProvider){
       templateUrl: '/html/showAllApartment.html',
       controller: 'apartmentCtrl'
     })
+    .state('apartment.editRoom', {
+      url: '/editRoom',
+      templateUrl: '/html/editRoom.html',
+      controller: 'apartmentCtrl'
+    })
 
 
     .state('renter', {
@@ -47,6 +52,7 @@ app.config(function($stateProvider, $urlRouterProvider){
       templateUrl: '/html/showAllRenter.html',
       controller: 'renterCtrl'
     })
+
 
 
 })
