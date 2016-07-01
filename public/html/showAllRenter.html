@@ -1,0 +1,38 @@
+<div class="container myShowRenter">
+  <br>
+  <div></div>
+  <div class="renterBox">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-xs-3 text-center">Full Name</th>
+          <th class="col-xs-3 text-center">Email</th>
+          <th class="col-xs-2 text-center">Phone Number</th>
+          <th class="col-xs-2 text-center">Desired Contract Length</th>
+          <th class="col-xs-2 text-center">Option</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="renter in renters track by $index">
+          <td>{{renter.name}}</td>
+          <td>{{renter.email}}</td>
+          <td>{{renter.phone | phonenumber}}</td>
+          <td>
+            <div ng-repeat="renter in renter.renters">
+              {{renter.tenancy}}
+            </div>
+          </td>
+
+          <td>
+            <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+            <button ng-click="deleteRoom($index)" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+  </div>
+
+</div>

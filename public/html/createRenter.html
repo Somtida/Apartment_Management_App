@@ -1,0 +1,42 @@
+<div class="container myShowRenter">
+  <br>
+  <div class="createBox" >
+  <div class="alert alert-info">
+    <div class="row">
+      <div class="col-xs-10 text-left">
+        <span class="fa fa-info-circle"></span>  Renter Information
+      </div>
+      <div class="col-xs-2 text-right">
+        <button ng-click="resetCreateRenterArea()" class="btn btn-danger btn-sm text-right"><span class="fa fa-times-circle"></span></button>
+      </div>
+    </div>
+  </div>
+  <div>
+  <form class="form-horizontal" ng-submit="createNewRenter()">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Full Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="newRenter.name" required>
+      </div>
+      <label class="col-sm-2 control-label">email</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="newRenter.question" required>
+      </div>
+      <label class="col-sm-2 control-label">Phone Number</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="newRenter.answer" required>
+      </div>
+      <label class="col-sm-2 control-label">Desired Contract Length</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="newRenter.answer" required>
+      </div>
+
+    <button class="btn btn-success createButt"><span class="fa fa-floppy-o"></span> Create</button>
+  </div>
+  </form>
+
+</div>
+</div>
+
+
+</div>

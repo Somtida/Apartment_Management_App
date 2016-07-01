@@ -15,6 +15,13 @@
   width: 60%;
   margin-bottom: 25px;
 }
+.myApartment, .myRenter{
+  width: 90%;
+}
+.myShowApartment, .myShowRenter{
+  margin-top: 10px;
+  width: 100%;
+}
 /*follow me*/
 .social-icon{
     padding-top: 6px;

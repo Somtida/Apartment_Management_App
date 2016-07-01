@@ -7,8 +7,10 @@
         <tr>
           <th class="col-xs-2 text-center">Room</th>
           <th class="col-xs-3 text-center">Room Info.</th>
+          <th class="col-xs-1 text-center">Capacity</th>
           <th class="col-xs-1 text-center">Guest Amount</th>
-          <th class="col-xs-4 text-center">Renters</th>
+          <th class="col-xs-1 text-center">Avaliable Amount</th>
+          <th class="col-xs-2 text-center">Renters</th>
           <th class="col-xs-2 text-center">Option</th>
         </tr>
       </thead>
@@ -16,7 +18,9 @@
         <tr ng-repeat="apartmentRoom in apartmentRooms track by $index">
           <td>{{apartmentRoom.name}}</td>
           <td>{{apartmentRoom.roomInfo[0]}}</td>
+          <td>{{apartmentRoom.capacity}}</td>
           <td>{{apartmentRoom.renters.length}}</td>
+          <td>{{apartmentRoom.capacity - apartmentRoom.renters.length}}</td>
           <td>
             <div ng-repeat="renter in apartmentRoom.renters">
               {{renter.name}}

@@ -6,14 +6,6 @@ app.service('Apartment', function($http, $q){
   this.apartmentRooms = [];
 
   this.get = () => $http.get('/api/apartments');
-      // .then(res => {
-      //   this.apartmentRooms = res.data;
-      //   console.log("this.apartmentRooms: ",this.apartmentRooms);
-      // })
-      // .catch(err=>{
-      //   console.log("err: ",err);
-      // })
-
 
   this.post = newRoom => {
     return $http.post('/api/apartments', newRoom);
@@ -30,6 +22,7 @@ app.service('Apartment', function($http, $q){
 })
 
 app.service('Renter', function($http){
+  this.renters = [];
   this.get = () => {
     return $http.get('/api/renters');
   }

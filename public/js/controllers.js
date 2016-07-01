@@ -15,13 +15,26 @@ app.controller('mainCtrl', function($scope, Apartment) {
       console.log("err: ",err);
     })
 
+
 });
 
-app.controller('renterCtrl', function($scope) {
+app.controller('renterCtrl', function($scope, Renter) {
   console.log('renterCtrl!');
   $scope.resetCreateRenterArea = () => {
     $scope.newRenter = null;
   }
+
+  $scope.renters = [];
+  Renter.get()
+    .then(res=>{
+      $scope.renters = res.data;
+      // Renter.renters = res.data;
+    })
+    .catch(err => {
+      console.log("err: ",err);
+    })
+
+
 
 
 });
@@ -51,7 +64,7 @@ app.controller('showallCtrl', function($scope, Apartment){
   console.log('showallCtrl');
   $scope.deleteRoom = (index) => {
     let id = $scope.apartmentRooms[index]._id;
-    console.log("$scope....id: ",$scope.apartmentRooms[index]._id);
+    console.log("$scopeid: ",$scope.apartmentRooms[index]._id);
     Apartment.delete(id)
       .then(() =>{
         console.log("deleted");

@@ -1,0 +1,34 @@
+<div class="container myShowRenter">
+  <br>
+  <div></div>
+  <div class="apartmentBox">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-xs-3 text-center">Apartment Name</th>
+          <th class="col-xs-3 text-center">Info</th>
+          <th class="col-xs-2 text-center">Capacity</th>
+          <th class="col-xs-2 text-center">Created At</th>
+          <th class="col-xs-2 text-center">Option</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="apartmentRoom in apartmentRooms track by $index">
+          <td>{{apartmentRoom.name}}</td>
+          <td>{{apartmentRoom.roomInfo}}</td>
+          <td>{{apartmentRoom.capacity}}</td>
+          <td>{{apartmentRoom.createdAt | date}}</td>
+
+          <td>
+            <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+            <button ng-click="deleteRoom($index)" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+  </div>
+
+</div>
